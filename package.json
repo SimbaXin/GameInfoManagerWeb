@@ -1,0 +1,32 @@
+{
+  "name": "gameinfomanagerweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimbaXin/GameInfoManagerWeb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimbaXin/GameInfoManagerWeb/issues"
+  },
+  "homepage": "https://github.com/SimbaXin/GameInfoManagerWeb#readme",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "nyc": "^11.0.2",
+    "sinon": "^2.3.5"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "koa": "^2.3.0",
+    "pg": "^6.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.2.0"
+  }
+}
