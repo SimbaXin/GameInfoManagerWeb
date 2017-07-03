@@ -1,0 +1,12 @@
+{
+  "db": "gameinfo",
+  "username": DB_USER_NAME,
+  "password": DB_PASSWD",
+  "host": "localhost",
+  "dialect": "postgres",
+  "pool": {
+    "max": 5,
+    "min": 0,
+    "idle": 10000
+  }
+}

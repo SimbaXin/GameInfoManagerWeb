@@ -1,16 +1,9 @@
 const Sequelize = require('sequelize');
+const dbProxy = require('./src/util/db-proxy');
+const config = require('./config');
 
-(async function (Sequelize) {
-  const sequelize = new Sequelize('gameinfo', 'postgres', 'lich1394', {
-    host: 'localhost',
-    dialect: 'postgres',
-
-    pool: {
-      max: 5,
-      min: 0,
-      idle: 10000
-    }
-  });
+(async function () {
+  const sequelize = dbProxy.createInstance(Sequelize, config);
 
   try {
     await sequelize.authenticate();
@@ -25,17 +18,16 @@ const Sequelize = require('sequelize');
     });
 
     // force: true will drop the table if it already exists
-    await User.sync({force: true})
+    // await User.sync({force: true})
     let u = await User.build({
       firstName: 'John',
       lastName: 'Hancock'
     });
-    console.log(u.save);
-    console.log(u.constructor.prototype);
+    await u.save();
   } catch(err) {
     console.error(err);
   } finally {
     console.log('success');
   }
-  
-})(Sequelize);
+  await sequelize.close();
+})();

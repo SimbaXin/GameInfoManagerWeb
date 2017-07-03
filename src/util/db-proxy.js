@@ -6,7 +6,7 @@ class dbProxy {
       pool: config.pool
     };
 
-    return new Sequelize.sequelize(
+    return new Sequelize(
       config.db,
       config.username,
       config.password,
